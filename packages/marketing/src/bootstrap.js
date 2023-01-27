@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+//import { Process } from "dotenv-webpack";
 //Mount function tp start up the app
 const mount = (el) => {
   ReactDOM.render(<App />, el);
@@ -8,7 +9,7 @@ const mount = (el) => {
 
 //If we are in development and in isolation,
 //call mount immediately
-if (ProcessingInstruction.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_marketing-dev-root");
 
   if (devRoot) {

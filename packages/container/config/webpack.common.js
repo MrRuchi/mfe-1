@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   module: {
     rules: [
@@ -8,12 +10,17 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react", "@babel/preset-env"],
-            Plugins: ["@babel/plugin-transform-runtime"],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };
 
 //test: /\.m?js$/,  Whenever import a file with extension of .mjs or .js will be processed by babel
